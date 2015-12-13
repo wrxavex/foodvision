@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html ng-app="foodbook">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Firebase and Angulafire -->
+    <script src="js/firebase-web.js"></script>
+    <script src="js/angularfire.js"></script>
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controller.js"></script>
+  </head>
+  <body class="platform-ios platform-cordova platform-webview">
+
+    <ion-nav-bar align-title="center">
+    <ion-nav-back-button> </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-nav-view></ion-nav-view>
+
+  <!-- Templates -->
+
+  <!-- home.html -->
+  <script type = "text/ng-template" id = "home.html" >
+    <ion-view view-title="餐飲美學提升平台">
+      <ion-content>
+
+            <div class="list card">
+              <div class="item text-center">
+                <h1>美食競賽評選</h1>
+              </div>
+              <div class="item item-body">
+                <img src="img/02.jpg" class="full-image">
+              </div>
+
+              <div class="item tabs tabs-secondary tabs-icon-left">
+                <a class="tab-item" ui-sref="recList"><i class="icon ion-ios-photos"></i> 查看</a>
+                <a class="tab-item" ui-sref="edit"><i class="icon ion-edit"></i> 編輯</a>
+                <a class="tab-item" ui-sref="rank"><i class="icon ion-ios-star"></i> Rank</a>
+                <a class="tab-item" ui-sref="add"><i class="icon ion-ios-plus-empty"></i> 增加</a>
+                <a class="tab-item" ui-sref="del"><i class="icon ion-ios-minus-empty"></i> 刪除</a>
+              </div>
+
+
+
+            </div>
+
+
+
+        <!--<form action="http://192.168.1.12:8000/" method="post" enctype="multipart/form-data">-->
+            <!--Select image to upload:-->
+            <!--<input type="file" name="fileToUpload" id="fileToUpload">-->
+            <!--<input type="submit" value="Upload Image" name="submit">-->
+        <!--</form>-->
+
+
+
+
+
+
+      </ion-content>
+
+    </ion-view>
+  </script>
+
+  <!-- add.html -->
+  <script type = "text/ng-template" id = "add.html" >
+    <ion-view view-title="增加新料理">
+      <ion-content>
+
+      <div class="list list-inset" ng-controller="addController">
+
+        <label class="item item-input item-stacked-label myBorder">
+          <span class="input-label">料理名稱</span>
+          <input type="text" ng-model="recName">
+        </label>
+
+
+        <label class="item item-input item-stacked-label myBorder">
+          <span class="input-label">料理特色</span>
+          <textarea rows="10" cols="10" ng-model="recIngredients"></textarea>
+        </label>
+
+        <label class="item item-input item-stacked-label myBorder">
+          <span class="input-label">料理說明</span>
+          <textarea rows="10" cols="10" ng-model="recDirections"></textarea>
+        </label>
+
+        <label class="item item-input item-stacked-label myBorder">
+          <span class="input-label">料理照片</span>
+          <textarea rows="10" cols="10" ng-model="recIamge"></textarea>
+        </label>
+
+        <div class="item range range-positive">
+          <span class="input-label">美食評分</span>
+          <i class="icon ion-ios-star-outline"></i>
+          <input type="range" name="Rank" min="0" max="5" value="3">
+          <i class="icon ion-ios-star"></i>
+        </div>
+
+
+
+
+
+        <div class="item button button-block button-positive" ng-model="addButton" ng-disabled="!recName||!recIngredients||!recDirections" ng-click="submitRecipe()" >
+        Add Recipe
+        </div>
+
+
+
+
+
+      </div>
+
+      </ion-content>
+    </ion-view>
+    </script>
+
+
+  <!-- rank list -->
+    <script type="text/ng-template" id="rankList.html">
+      <ion-view view-title="選擇想評分的料理">
+        <ion-content>
+          <ion-list ng-controller="rankController">
+            <ion-item ng-repeat="rank in rankrecipes | orderBy: '-recipeScore'">
+              <a ui-sref="score({id:rank.$id})" nav-direction="enter" class="item item-avatar">
+                <img src="img/{{rank.recipeImage}}" alt="">
+                <h2>{{rank.recipeName}}</h2>
+                <h3>{{rank.recipeScore}}</h3>
+              </a>
+            </ion-item>
+
+          </ion-list>
+
+
+        </ion-content>
+      </ion-view>
+
+
+
+    </script>
+
+<!-- recipe Rank Score -->
+    <script type="text/ng-template" id = "rankScore.html">
+      <ion-view view-title="評分這道料理">
+        <ion-content>
+
+          <div class="list list-inset" ng-controller="rankScoreController">
+
+
+            <div class="list card">
+              <div class="item text-center">
+                <h2>料理名稱 - {{title}}</h2>
+              </div>
+
+
+              <div class="item item-body">
+
+                <img src="img/{{image}}" alt="" class="full-image">
+                <h2>料理score - 獲得{{number}}分，共有{{rankCount}}人評分，平均分數為{{rating}}</h2>
+
+                <h2><i ng-repeat="r in ratingArr" class="icon {{r.icon}}"></i></h2>
+
+
+
+                <label class="item item-input item-stacked-label myBorder">
+                  <span class="input-label">請評分</span>
+
+                  <input type="text" ng-model="rankIt" >
+                </label>
+
+
+                <div class="item button button-block button-positive" ng-model="scoreButton"  ng-click="ScoreRecipe(myid)" >
+                  評分料理
+                </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+          </div>
+
+        </ion-content>
+      </ion-view>
+
+    </script>
+
+
+<!-- recipe list -->
+    <script type = "text/ng-template" id = "recList.html" >
+      <ion-view view-title="Choose Recipe">
+        <ion-content>
+          <ion-list ng-controller="listController">
+            <ion-item ng-repeat="recipe in recipes" class = "recListing">
+              <a  ui-sref="singleRecipe({id:recipe.$id})" nav-direction="enter" class="item item-avatar" >
+                <img src="img/{{recipe.recipeImage}}" alt="">
+                <h2>{{recipe.recipeName}}</h2>
+              </a>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-view>
+    </script>
+
+<!-- single recipe -->
+<script type = "text/ng-template" id = "singleRec.html" >
+      <ion-view view-title="Recipe" >
+        <ion-content>
+          <div ng-controller="recipeController">
+          <h4>{{singleRecipe.recipeName}}</h4>
+          <h4>料理特色:</h4>
+          <ion-list type="inset-list">
+            <ion-item ng-repeat="ing in ingList">
+              {{ing}}
+            </ion-item>
+          </ion-list>
+          <h4>料理說明:</h4>
+          <ion-list type="inset-list">
+            <ion-item ng-repeat="prep in prepList">
+              {{prep}}
+            </ion-item>
+          </ion-list>
+          <h4>Foodimage</h4>
+          <ion-list>
+            <ion-item>
+              <img src="img/{{singleRecipe.recipeImage}}" alt="" class="full-image">
+            </ion-item>
+          </ion-list>
+
+
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+
+
+<!-- delete recipe -->
+<script type = "text/ng-template" id = "delRec.html" >
+  <ion-view view-title="刪除料理">
+    <ion-content class="myContent">
+      <div ng-controller="deleteController">
+        <ion-list>
+          <ion-item ng-repeat="rec in recs">
+            <div class="item button button-block button-positive" ng-model="delButton" ng-click="showDetails(rec.$id)" >
+            刪除 {{rec.recipeName}}
+            </div>
+        </ion-list>
+      </div>
+    </ion-content>
+  </ion-view>
+</script>
+
+<!-- edit recipe -->
+<script type = "text/ng-template" id = "edit.html" >
+  <ion-view view-title="選擇要編緝的料理">
+    <ion-content>
+      <ion-list ng-controller="editController">
+        <ion-item ng-repeat="edit in editRecipes" class = "recListing" >
+
+          <a ui-sref="one({id:edit.$id})" nav-direction="enter" class="item item-avatar" >
+
+            <img src="img/{{edit.recipeImage}}">
+            <h2> 編緝 - {{edit.recipeName}}</h2>
+
+
+          </a>
+
+
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-view>
+</script>
+
+<!-- edit one recipe -->
+<script type = "text/ng-template" id="editOne.html">
+  <ion-view view-title="編輯料理">
+    <ion-content>
+    <div class="list list-inset" ng-controller="recipeEditController">
+
+      <label class="item item-input item-stacked-label myBorder">
+      <span class="input-label">料理名稱</span>
+      <input type="text" ng-model="title">{{$scope.title}}
+      </label>
+
+
+
+      <label class="item item-input item-stacked-label myBorder">
+      <span class="input-label">料理特色</span>
+      <textarea rows="10" cols="10" ng-model="ingredients">{{$scope.ingredients}}</textarea>
+      </label>
+
+      <label class="item item-input item-stacked-label myBorder">
+      <span class="input-label">料理說明</span>
+      <textarea rows="10" cols="10" ng-model="directions">{{$scope.directions}}</textarea>
+      </label>
+
+      <label class="item item-input item-stacked-label myBorder">
+        <span class="input-label">料理圖片</span>
+        <textarea rows="10" cols="10" ng-model="image">{{$scope.image}}</textarea>
+      </label>
+
+
+
+      <div class="item button button-block button-positive" ng-model="editButton" ng-disableled="!title||!ingredients||!directions" ng-click="updateRecipe(myid)" >
+      更新料理
+      </div>
+
+
+    </div>
+    </ion-content>
+  </ion-view>
+
+
+</script>
+
+
+
+  </body>
+</html>
