@@ -82,49 +82,50 @@
     <ion-view view-title="增加新料理">
       <ion-content>
 
-      <div class="list list-inset" ng-controller="addController">
+        <div class="list list-inset" ng-controller="addController">
 
-        <label class="item item-input item-stacked-label myBorder">
-          <span class="input-label">料理名稱</span>
-          <input type="text" ng-model="recName">
-        </label>
+          <label class="item item-input item-stacked-label myBorder">
+            <span class="input-label">料理名稱</span>
+            <input type="text" ng-model="recName">
+          </label>
+
+          <label class="item item-input item-stacked-label myBorder">
+            <span class="input-label">料理人</span>
+            <input type="text" ng-model="recChef">
+          </label>
 
 
-        <label class="item item-input item-stacked-label myBorder">
-          <span class="input-label">料理特色</span>
-          <textarea rows="10" cols="10" ng-model="recIngredients"></textarea>
-        </label>
+          <label class="item item-input item-stacked-label myBorder">
+            <span class="input-label">料理特色</span>
+            <textarea rows="3" cols="10" ng-model="recIngredients"></textarea>
+          </label>
 
-        <label class="item item-input item-stacked-label myBorder">
-          <span class="input-label">料理說明</span>
-          <textarea rows="10" cols="10" ng-model="recDirections"></textarea>
-        </label>
+          <label class="item item-input item-stacked-label myBorder">
+            <span class="input-label">料理說明</span>
+            <textarea rows="3" cols="10" ng-model="recDirections"></textarea>
+          </label>
 
-        <label class="item item-input item-stacked-label myBorder">
-          <span class="input-label">料理照片</span>
-          <textarea rows="10" cols="10" ng-model="recIamge"></textarea>
-        </label>
+          <label class="item item-input item-stacked-label myBorder">
+            <span class="input-label">料理照片</span>
+            <input type="text" ng-model="recImage">
+          </label>
 
-        <div class="item range range-positive">
-          <span class="input-label">美食評分</span>
-          <i class="icon ion-ios-star-outline"></i>
-          <input type="range" name="Rank" min="0" max="5" value="3">
-          <i class="icon ion-ios-star"></i>
+
+
+          <div class="item button button-block button-positive" ng-model="addButton" ng-disabled="!recName||!recIngredients||!recDirections" ng-click="submitRecipe()" >
+            Add Recipe
+          </div>
+
+
+
+
+
         </div>
 
 
 
 
 
-        <div class="item button button-block button-positive" ng-model="addButton" ng-disabled="!recName||!recIngredients||!recDirections" ng-click="submitRecipe()" >
-        Add Recipe
-        </div>
-
-
-
-
-
-      </div>
 
       </ion-content>
     </ion-view>
@@ -140,7 +141,7 @@
               <a ui-sref="score({id:rank.$id})" nav-direction="enter" class="item item-avatar">
                 <img src="img/{{rank.recipeImage}}" alt="">
                 <h2>{{rank.recipeName}}</h2>
-                <h3>{{rank.recipeScore}}</h3>
+                <h3>總分 {{rank.recipeScore}} 分 - 共 {{rank.recipeRankCount}} 人評分 平均 {{rank.recipeScore / rank.recipeRankCount | number:1}} 分</h3>
               </a>
             </ion-item>
 
@@ -171,21 +172,25 @@
               <div class="item item-body">
 
                 <img src="img/{{image}}" alt="" class="full-image">
-                <h2>料理score - 獲得{{number}}分，共有{{rankCount}}人評分，平均分數為{{rating}}</h2>
+                <h2>料理score - 獲得{{number}}分，共有{{rankCount}}人評分，平均分數為{{number / rankCount | number:1}}</h2>
 
                 <h2><i ng-repeat="r in ratingArr" class="icon {{r.icon}}"></i></h2>
 
 
 
-                <label class="item item-input item-stacked-label myBorder">
-                  <span class="input-label">請評分</span>
+                <label class="item item-stacked-label myBorder">
+                  <span>美食評分 - 您給的分數是： {{rankIt}} 分</span>
+                  <div class="item range range-positive">
+                    <i class="icon ion-ios-star-outline"></i>
+                    <input type="range" ng-model="rankIt" name="rankIt" min="0" max="10">
+                    <i class="icon ion-ios-star"></i>
+                  </div>
 
-                  <input type="text" ng-model="rankIt" >
                 </label>
 
 
                 <div class="item button button-block button-positive" ng-model="scoreButton"  ng-click="ScoreRecipe(myid)" >
-                  評分料理
+                  送出評分
                 </div>
 
 
@@ -216,7 +221,8 @@
             <ion-item ng-repeat="recipe in recipes" class = "recListing">
               <a  ui-sref="singleRecipe({id:recipe.$id})" nav-direction="enter" class="item item-avatar" >
                 <img src="img/{{recipe.recipeImage}}" alt="">
-                <h2>{{recipe.recipeName}}</h2>
+                <h2>料理名稱 - {{recipe.recipeName}}</h2>
+                <h3>料理人 - {{recipe.recipeChef}}</h3>
               </a>
             </ion-item>
           </ion-list>
@@ -229,7 +235,15 @@
       <ion-view view-title="Recipe" >
         <ion-content>
           <div ng-controller="recipeController">
-          <h4>{{singleRecipe.recipeName}}</h4>
+          <h3>料理名稱 - {{singleRecipe.recipeName}}</h3>
+            <h3>料理人 - {{singleRecipe.recipeChef}}</h3>
+            <h4>料理照片</h4>
+            <ion-list>
+              <ion-item>
+                <img src="img/{{singleRecipe.recipeImage}}" alt="" class="full-image">
+              </ion-item>
+            </ion-list>
+
           <h4>料理特色:</h4>
           <ion-list type="inset-list">
             <ion-item ng-repeat="ing in ingList">
@@ -242,12 +256,7 @@
               {{prep}}
             </ion-item>
           </ion-list>
-          <h4>Foodimage</h4>
-          <ion-list>
-            <ion-item>
-              <img src="img/{{singleRecipe.recipeImage}}" alt="" class="full-image">
-            </ion-item>
-          </ion-list>
+
 
 
           </div>
@@ -282,7 +291,8 @@
           <a ui-sref="one({id:edit.$id})" nav-direction="enter" class="item item-avatar" >
 
             <img src="img/{{edit.recipeImage}}">
-            <h2> 編緝 - {{edit.recipeName}}</h2>
+            <h2>{{edit.recipeName}}</h2>
+            <p>{{edit.recipeChef}}</p>
 
 
           </a>
@@ -305,21 +315,26 @@
       <input type="text" ng-model="title">{{$scope.title}}
       </label>
 
+      <label class="item item-input item-stacked-label myBorder">
+        <span class="input-label">料理人</span>
+        <input type="text" ng-model="chef">{{$scope.chef}}
+      </label>
+
 
 
       <label class="item item-input item-stacked-label myBorder">
       <span class="input-label">料理特色</span>
-      <textarea rows="10" cols="10" ng-model="ingredients">{{$scope.ingredients}}</textarea>
+      <textarea rows="3" cols="10" ng-model="ingredients">{{$scope.ingredients}}</textarea>
       </label>
 
       <label class="item item-input item-stacked-label myBorder">
       <span class="input-label">料理說明</span>
-      <textarea rows="10" cols="10" ng-model="directions">{{$scope.directions}}</textarea>
+      <textarea rows="3" cols="10" ng-model="directions">{{$scope.directions}}</textarea>
       </label>
 
       <label class="item item-input item-stacked-label myBorder">
-        <span class="input-label">料理圖片</span>
-        <textarea rows="10" cols="10" ng-model="image">{{$scope.image}}</textarea>
+        <span class="input-label">料理照片</span>
+        <input type="text" ng-model="image">{{$scope.image}}
       </label>
 
 

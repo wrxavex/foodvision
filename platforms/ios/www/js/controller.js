@@ -6,11 +6,15 @@ fbook.controller('addController',function($scope,$firebaseArray,$state,recipeSer
             recipeName: $scope.recName,
             recipeIngredients: $scope.recIngredients,
             recipeDirections: $scope.recDirections,
-            recipeImage: $scope.recIamge,
+            recipeChef: $scope.recChef,
+            recipeImage: $scope.recImage,
             recipeScore: 0,
-            recipeRankCount: 0
+            recipeRankCount: 0,
+            recipeCommentUserName: 0,
+            recipeCommentContent: 0
         });
         $state.go('home');
+
     };
 });
 
@@ -57,10 +61,6 @@ fbook.controller('editController',function($scope,recipeService){
 
 fbook.controller('rankController',function($scope,recipeService){
   $scope.rankrecipes = recipeService.all;
-  $scope.number = $scope.rankrecipes.recipeScore;
-
-
-  console.log($scope.rating);
 });
 
 fbook.controller('rankScoreController',function($scope, recipeService,$stateParams,$state){
@@ -70,10 +70,15 @@ fbook.controller('rankScoreController',function($scope, recipeService,$statePara
   $scope.myid = $scope.onlyoneRecipe.$id;
   $scope.image = $scope.onlyoneRecipe.recipeImage;
   $scope.number = $scope.onlyoneRecipe.recipeScore;
-  $scope.rankIt = $scope.rankIt;
   $scope.rankCount = $scope.onlyoneRecipe.recipeRankCount;
-  $scope.rating = Math.round($scope.number / $scope.rankCount);
-  console.log($scope.rating);
+  $scope.rating = $scope.number / $scope.rankCount;
+
+  var rankIt = 0;
+  $scope.rankIt = rankIt;
+
+
+
+
   $scope.ratingArr = [{
     value: 1,
     icon: 'ion-ios-star-outline'
@@ -133,11 +138,13 @@ fbook.controller('recipeEditController',function($scope, recipeService, $statePa
 	$scope.title = $scope.singleRecipe.recipeName;
 	$scope.ingredients = $scope.singleRecipe.recipeIngredients;
 	$scope.directions = $scope.singleRecipe.recipeDirections;
+  $scope.chef = $scope.singleRecipe.recipeChef;
   $scope.image = $scope.singleRecipe.recipeImage;
 	$scope.myid = $scope.singleRecipe.$id;
 	$scope.updateRecipe = function(id) {
 		var ed = $scope.allRecs.$getRecord(id);
 		ed.recipeName = $scope.title;
+    ed.recipeChef = $scope.chef;
 		ed.recipeIngredients = $scope.ingredients;
 		ed.recipeDirections = $scope.directions;
     ed.recipeImage = $scope.image;
