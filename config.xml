@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.foodbook469111" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>foodbook</name>
+<widget id="tw.znh.foodvision" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>foodvision</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Food Vision 美食提升平台
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
+  <author email="wrxavex@gmail.com" href="http://www.znh.tw/">
       Ionic Framework Team
     </author>
   <content src="index.html"/>
