@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="7cc596480f389a37dc0950db10c0387198571bcf">
+        <dex dex="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_05ff508405da84a38778edf7bbf1400d754cceea/classes.dex" />
+    </item>
+    <item
+        jar="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ffd74f5233714d6689d38d804e0cd25f0eb21081">
+        <dex dex="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_05ff508405da84a38778edf7bbf1400d754cceea/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/znh/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-v4-19.1.0_c77943fa6ccbba7c94e0ec89363d133eb27480a1/classes.dex" />
+    </item>
+    <item
+        jar="/Users/znh/Library/Android/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-v4-19.1.0_c77943fa6ccbba7c94e0ec89363d133eb27480a1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/libs/androidplot-core-0.6.2-SNAPSHOT.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="161234ca48d0c64e5a4366a35219101f79eddee5">
+        <dex dex="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/2/androidplot-core-0.6.2-SNAPSHOT_2fade36d7e2277665c0bae1db965849416956a3c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="f08a53ac5e400e7fd7e1869cf4561d672565a769">
+        <dex dex="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d4be19d4bd205958558c35116c4f09fa102749c4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="68cd146d0eefe0c0bcf4eda5e4424058cd52195b">
+        <dex dex="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d4be19d4bd205958558c35116c4f09fa102749c4/classes.dex" />
+    </item>
+    <item
+        jar="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/libs/androidplot-core-0.6.2-SNAPSHOT.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="161234ca48d0c64e5a4366a35219101f79eddee5">
+        <dex dex="/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/2/androidplot-core-0.6.2-SNAPSHOT_2fade36d7e2277665c0bae1db965849416956a3c/classes.dex" />
+    </item>
+
+</items>

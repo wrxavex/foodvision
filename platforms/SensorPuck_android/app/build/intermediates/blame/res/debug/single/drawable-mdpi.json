@@ -1,0 +1,70 @@
+[
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/btn_celsius_normal.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/btn_celsius_normal.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_battery.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_battery.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/puck_overlay.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/puck_overlay.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/btn_fahrenheit_pressed.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/btn_fahrenheit_pressed.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_uv.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_uv.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_name_edit.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_name_edit.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_humidy.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_humidy.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_temperature.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_temperature.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_drawer.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_drawer.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_heartrate.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_heartrate.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/btn_celsius_pressed.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/btn_celsius_pressed.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_launcher.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_light.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_light.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/puck_image.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/puck_image.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_puck.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_puck.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_info.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/ic_info.png"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/drawable-mdpi/btn_fahrenheit_normal.png",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/drawable-mdpi/btn_fahrenheit_normal.png"
+    }
+]

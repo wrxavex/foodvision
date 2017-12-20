@@ -1,0 +1,7 @@
+#Fri Jan 06 21:33:31 CST 2017
+base.0=/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_05ff508405da84a38778edf7bbf1400d754cceea
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d4be19d4bd205958558c35116c4f09fa102749c4/classes.dex
+base.1=/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_d4be19d4bd205958558c35116c4f09fa102749c4
+file.0=/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_05ff508405da84a38778edf7bbf1400d754cceea/classes.dex

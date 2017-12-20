@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/layout/fragment_bio.xml",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/layout/fragment_bio.xml"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/layout/activity_web.xml",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/layout/activity_web.xml"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/layout/fragment_env.xml",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/layout/fragment_env.xml"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/layout/drawer_list_item.xml",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/layout/drawer_list_item.xml"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/layout/fragment_not.xml",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/layout/fragment_not.xml"
+    },
+    {
+        "merged": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/build/intermediates/res/merged/debug/layout/activity_info.xml",
+        "source": "/Users/znh/GitProject/foodvision/platforms/SensorPuck_android/app/src/main/res/layout/activity_info.xml"
+    }
+]
