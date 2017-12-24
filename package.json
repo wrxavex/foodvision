@@ -1,9 +1,9 @@
 {
-  "name": "herokuApp",
-  "version": "0.0.1",
+  "name": "foodvision",
+  "version": "0.8.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
-  "private": true,
+  "private": false,
   "scripts": {
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
