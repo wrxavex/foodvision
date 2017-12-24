@@ -1,6 +1,6 @@
 {
   "name": "foodvision",
-  "app_id": "",
+  "app_id": "94a52287",
   "gulpStartupTasks": [
     "sass",
     "watch"
